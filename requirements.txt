@@ -1,29 +1,28 @@
 # Flask
-Flask==0.12.2
-MarkupSafe==0.23
-Werkzeug==0.11.15
-Jinja2==2.9.4
-itsdangerous==0.24
-# wsgiref==0.1.2
+Flask
+MarkupSafe
+Werkzeug
+Jinja2
+itsdangerous
 
 # Database
-Flask-SQLAlchemy==2.1
-psycopg2==2.6.2
-SQLAlchemy==1.1.5
+Flask-SQLAlchemy
+psycopg2
+SQLAlchemy
 
 # Migrations
-Flask-Migrate>=2.1.1
+Flask-Migrate
 
 # Deployment
-gunicorn>=19.7.1
+gunicorn
 
 # Assets
-Flask-Assets==0.12
-cssmin>=0.2.0
-jsmin>=2.0.11
+Flask-Assets
+cssmin
+jsm
 
 # Caching
-Flask-Caching>=1.0.0
+Flask-Caching
 
 # Debug toolbar
-Flask-DebugToolbar==0.10.1
+Flask-DebugToolbar

@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+
+Flask = "*"
+MarkupSafe = "*"
+Werkzeug = "*"
+Jinja2 = "*"
+itsdangerous = "*"
+Flask-SQLAlchemy = "*"
+psycopg2 = "*"
+SQLAlchemy = "*"
+Flask-Migrate = "*"
+gunicorn = "*"
+Flask-Assets = "*"
+cssmin = "*"
+jsmin = "*"
+Flask-Caching = "*"
+
+[dev-packages]
+Flask-DebugToolbar = "*"
+
+[requires]
+python_version = "3.6"
