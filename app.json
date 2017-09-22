@@ -1,0 +1,17 @@
+{
+  "name": "Khoa Nguyen Web CV",
+  "description": "Web CV and portfolio for Khoa Nguyen",
+  "image": "heroku/python",
+  "repository": "https://github.com/kn19/flask-webcv",
+  "addons": [ "heroku-postgresql" ],
+  "env": {
+    "FLASKAPP_SECRET": {
+      "description": "Random string used to secure the flask session cookie.",
+      "generator": "secret"
+    },
+    "FLASK_DEBUG": {
+      "description": "Boolean used to put Flask into debug mode.",
+      "value": "false"
+    }
+  }
+}

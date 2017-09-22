@@ -6,7 +6,7 @@ import os
 class Config(object):
     """Base configuration."""
 
-    SECRET_KEY = os.environ.get('FLASKAPP_SECRET', '\x1d\x96U\x92{V\xb38+\x05\xc4:\xb1\x886\xa7\xf9J\x19x\xf1\x83\xddN')
+    SECRET_KEY = os.environ.get('FLASKAPP_SECRET')
     APP_DIR = os.path.abspath(os.path.dirname(__file__))
     PROJECT_ROOT = os.path.abspath(os.path.join(APP_DIR, os.pardir))
     ASSETS_DEBUG = False
