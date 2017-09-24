@@ -4,6 +4,7 @@ MarkupSafe
 Werkzeug
 Jinja2
 itsdangerous
+flask-heroku
 
 # Database
 Flask-SQLAlchemy
@@ -23,6 +24,3 @@ jsm
 
 # Caching
 Flask-Caching
-
-# Debug toolbar
-Flask-DebugToolbar

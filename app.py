@@ -2,8 +2,8 @@
 """Create an application instance."""
 # from flask.helpers import get_debug_flag
 
-# from webapp.app import create_app
-# from webapp.settings import DevConfig, ProdConfig
+# from webcv.app import create_app
+# from webcv.settings import DevConfig, ProdConfig
 
 
 # app = create_app(CONFIG)
@@ -11,8 +11,8 @@
 
 from flask.helpers import get_debug_flag
 
-from webapp.app import create_app
-from webapp.settings import DevConfig, ProdConfig
+from webcv.app import create_app
+from webcv.settings import DevConfig, ProdConfig
 
 CONFIG = DevConfig if get_debug_flag() else ProdConfig
 

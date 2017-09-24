@@ -5,23 +5,21 @@ name = "pypi"
 
 [packages]
 
-Flask = "*"
-MarkupSafe = "*"
-Werkzeug = "*"
-Jinja2 = "*"
+flask = "*"
+markupsafe = "*"
+werkzeug = "*"
+jinja2 = "*"
 itsdangerous = "*"
-Flask-SQLAlchemy = "*"
+flask-sqlalchemy = "*"
 psycopg2 = "*"
-SQLAlchemy = "*"
-Flask-Migrate = "*"
+sqlalchemy = "*"
+flask-migrate = "*"
 gunicorn = "*"
-Flask-Assets = "*"
+flask-assets = "*"
 cssmin = "*"
 jsmin = "*"
-Flask-Caching = "*"
-
-[dev-packages]
-Flask-DebugToolbar = "*"
+flask-caching = "*"
+flask-heroku = "*"
 
 [requires]
 python_version = "3.6"
