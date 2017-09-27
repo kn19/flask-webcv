@@ -4,7 +4,7 @@
 from flask import Flask
 
 from webcv import public
-from webcv.extensions import db, migrate, cache, heroku
+from webcv.extensions import db, migrate, heroku # cache,
 from webcv.settings import Config
 
 
@@ -22,7 +22,7 @@ def create_app(config_object=Config):
 
 def register_extensions(app):
     """Register Flask extensions."""
-    cache.init_app(app)
+    # cache.init_app(app)
     heroku.init_app(app)
     db.init_app(app)
     migrate.init_app(app, db)
