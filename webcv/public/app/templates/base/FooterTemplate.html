@@ -1,0 +1,18 @@
+<!-- <footer> -->
+<div class="row">
+  <div class="twelve columns">
+    <ul class="copyright">
+      <li>© 2017</li>
+      <li><%= model['first_name'] %> <%= model['last_name'] %></li>
+    </ul>
+    <ul class="social-links">
+      <% _.each(model['websites'], function(link) { %>
+      <li>
+        <a href="<%= link['url'] %>" target="_blank">
+          <i class="<%= AppConstants.FA_ICONS[link['name']] %>"></i>
+        </a>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>

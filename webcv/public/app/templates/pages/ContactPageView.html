@@ -1,0 +1,70 @@
+<!-- Contact Section
+================================================== -->
+<section id="contact">
+  <div class="row section-head">
+    <div class="two columns header-col">
+      <h1><span>Get In Touch.</span></h1>
+    </div>
+    <div class="five columns">
+      <p>If you would like to get in touch with me, please use the contact form
+        below. </p>
+      <p>Alternatively, I can also be reached via any of the channels listed on
+        the side of this page.
+      </p>
+    </div>
+    <aside class="five columns footer-widgets">
+      <div class="widget widget_contact">
+        <h4>
+          <i class="fa fa-phone-square"></i>
+          <%= model['phone_mobile'] %>
+        </h4>
+        <h4>
+          <a>
+            <i class="fa fa-envelope-square"></i>
+            <%= model['email'] %>
+          </a>
+        </h4>
+        <% _.each(model['websites'], function(link) { %>
+        <h4>
+          <a href="<%= link['url'] %>" target="_blank">
+            <i class="<%= AppConstants.FA_ICONS[link['name']] %>-square"></i>
+            <%= link['url'] %>
+          </a>
+        </h4>
+        <% }) %>
+      </div>
+    </aside>
+  </div>
+  <div class="row">
+    <div class="eight columns">
+      <form action="" method="post" id="contactForm" name="contactForm">
+        <fieldset>
+          <div>
+            <label for="contactName">Name <span
+                class="required">*</span></label>
+            <input type="text" value="" id="contactName" name="contactName">
+          </div>
+          <div>
+            <label for="contactEmail">Email <span
+                class="required">*</span></label>
+            <input type="email" value="" id="contactEmail" name="contactEmail">
+          </div>
+          <div>
+            <label for="contactSubject">Subject</label>
+            <input type="text" value="" id="contactSubject"
+                   name="contactSubject">
+          </div>
+          <div>
+            <label for="contactMessage">Message <span class="required">*</span></label>
+            <textarea id="contactMessage" name="contactMessage"></textarea>
+          </div>
+          <div>
+            <button class="submit" id="sendBtn">Send</button>
+          </div>
+        </fieldset>
+      </form>
+      <div id="statusMsg"></div>
+    </div>
+
+  </div>
+</section>

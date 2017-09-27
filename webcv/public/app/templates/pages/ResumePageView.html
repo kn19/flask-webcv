@@ -1,0 +1,75 @@
+<!-- Resume Section
+================================================== -->
+<section id="resume">
+  <!-- Skills
+  ================================================== -->
+  <div class="row resume-skills">
+    <div class="two columns header-col">
+      <h1><span>Skills</span></h1>
+    </div>
+    <div class="ten columns main-col">
+      <div class="skillsets">
+        <ul>
+          <% _.each(model['skills'], function(set) { %>
+          <% if(set['items'].length > 0) { %>
+          <li>
+            <em><%= set['skillset'] %>:</em> <%= set['items'].join(', ') %>
+          </li>
+          <% }}) %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Work
+  ================================================== -->
+  <div class="row resume-work">
+    <div class="two columns header-col">
+      <h1><span>Work</span></h1>
+    </div>
+    <div class="ten columns main-col">
+      <% _.each(model['experience'], function(job) { %>
+      <div class="row item company">
+        <div class="twelve columns">
+          <h3 class="company-name"><%= job['company'] %></h3>
+          <p class="info job-title"><%= job['title'] %> <span>&bull;</span> <em
+              class="date"><%= job['start_date'] %> to <%= job['end_date']
+            %></em></p>
+          <p class="job-summary">
+            <%= job['summary'] %>
+          </p>
+          <ul class="disc">
+            <% _.each(job['items'], function(item) { %>
+            <li> <%= item %></li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+  <!-- Education
+  ================================================== -->
+  <div class="row resume-education">
+    <div class="two columns header-col">
+      <h1><span>Education</span></h1>
+    </div>
+    <div class="ten columns main-col">
+      <% _.each(model['education'], function(edu) { %>
+      <div class="row item school">
+        <div class="twelve columns">
+          <h3 class="school-name"><%= edu['school'] %></h3>
+          <p class="info school-major"><%= edu['major'] %>
+            <span>&bull;</span> <em class="date"><%= edu['start_date']
+              %> - <%= edu['end_date'] %></em></p>
+          <ul class="disc">
+            <% _.each(edu['courses'], function(course) { %>
+            <li> <%= course %></li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>

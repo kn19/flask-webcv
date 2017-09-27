@@ -1,0 +1,43 @@
+<!-- Portfolio Section
+================================================== -->
+<section id="projects">
+  <div class="row">
+    <div class="twelve columns collapsed">
+      <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+        {% for proj in projects %}
+          <div class="columns portfolio-item">
+            <div class="item-wrap">
+              <a href="#modal-{{ proj.project_id }}" title="">
+                <img id="project-{{ proj.project_id }}"
+                     src="data:{{ proj.image_type }};base64,{{ proj.image.decode('utf-8') }}">
+                <div class="overlay">
+                  <div class="portfolio-item-meta">
+                    <h5>{{ proj.name }}</h5>
+                  </div>
+                </div>
+                <div class="link-icon"><i class="icon-plus"></i></div>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% for proj in projects %}
+    <div id="modal-{{ proj.project_id }}" class="popup-modal mfp-hide">
+      <div class="project-top">
+        <img id="project-{{ proj.project_id }}-modal" class="scale-with-grid"
+             src="data:{{ proj.image_type }};base64,{{ proj.image.decode('utf-8') }}"/>
+      </div>
+      <div class="description-box">
+        <h4>{{ proj.name }}</h4>
+        {{ proj.description_html|safe }}
+      </div>
+      <div class="link-box">
+        <a class="popup-modal-dismiss">Close</a>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+

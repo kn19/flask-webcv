@@ -1,22 +1,10 @@
 # -*- coding: utf-8 -*-
 """Create an application instance."""
-# from flask.helpers import get_debug_flag
-
-# from webcv.app import create_app
-# from webcv.settings import DevConfig, ProdConfig
-
-
-# app = create_app(CONFIG)
-
-
-from flask.helpers import get_debug_flag
 
 from webcv.app import create_app
-from webcv.settings import DevConfig, ProdConfig
+from webcv.settings import Config
 
-CONFIG = DevConfig if get_debug_flag() else ProdConfig
-
-app = create_app(CONFIG)
+app = create_app(Config)
 # app.jinja_env.cache = {}
 app.jinja_env.add_extension('jinja2.ext.do')
 

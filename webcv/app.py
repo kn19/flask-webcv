@@ -5,10 +5,10 @@ from flask import Flask
 
 from webcv import public
 from webcv.extensions import db, migrate, cache, heroku
-from webcv.settings import ProdConfig
+from webcv.settings import Config
 
 
-def create_app(config_object=ProdConfig):
+def create_app(config_object=Config):
     """Application factory.
 
     :param config_object: The configuration object to use.

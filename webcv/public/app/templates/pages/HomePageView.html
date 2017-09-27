@@ -1,0 +1,21 @@
+<!-- Home Page Section
+================================================== -->
+<section id="home">
+  <div class="row banner">
+    <div class="banner-text">
+      <h1 class="responsive-headline"><%= model['first_name'] %> <%=
+        model['last_name'] %></h1>
+      <h3><%= model['summary_html'] %></h3>
+      <hr/>
+      <ul class="social">
+        <% _.each(model['websites'], function(link) { %>
+        <li>
+          <a href="<%= link['url'] %>" target="_blank">
+            <i class="<%= AppConstants.FA_ICONS[link['name']] %>"></i>
+          </a>
+        </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+</section>

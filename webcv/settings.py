@@ -13,19 +13,14 @@ class Config(object):
     DEBUG_TB_ENABLED = False
     DEBUG_TB_INTERCEPT_REDIRECTS = False
     CACHE_TYPE = 'simple'
+
+    # SQLAlchemy settings
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
-
-class ProdConfig(Config):
-    """Production configuration."""
-    ENV = 'prod'
-    DEBUG = False
-    DEBUG_TB_ENABLED = False
-
-
-class DevConfig(Config):
-    """Development configuration."""
-    ENV = 'dev'
-    DEBUG = True
-    DEBUG_TB_ENABLED = False
-    ASSETS_DEBUG = True  # Don't bundle/minify static assets
+    # SMTP Settings for sending mails
+    SMTP_SERVER = os.environ.get('MAILGUN_SMTP_SERVER')
+    SMTP_PORT = os.environ.get('MAILGUN_SMTP_PORT')
+    SMTP_LOGIN = os.environ.get('MAILGUN_SMTP_LOGIN')
+    SMTP_PASSWORD = os.environ.get('MAILGUN_SMTP_PASSWORD')
+    SMTP_TARGET = os.environ.get('SMTP_TARGET')
