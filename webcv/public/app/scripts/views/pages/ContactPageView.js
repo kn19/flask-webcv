@@ -44,10 +44,16 @@ define([
           cmsg.val('');
           $('#statusMsg').html('<div id="message-success"><i class="fa fa-check"></i>Message sent. Thank you!</div>');
           $('#message-success').show();
+          setTimeout(function () {
+            $('#message-success').hide();
+          }, 6000);
         },
         error: function () {
           $('#statusMsg').html('<div id="message-warning">Unable to send email.</div>');
           $('#message-warning').show();
+          setTimeout(function () {
+            $('#message-warning').hide();
+          }, 6000);
         }
       });
 

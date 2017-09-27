@@ -4,7 +4,7 @@ import smtplib
 
 from email.mime.text import MIMEText
 from flask import (
-    Blueprint, render_template, request, jsonify, Response, current_app)
+    Blueprint, render_template, request, jsonify, Response, current_app, abort)
 
 from webcv.public.model import Service
 
@@ -32,21 +32,19 @@ def get_projects():
 
 @public.route('/send_message', methods=["POST"])
 def send_message():
-    return 200 if send_email(**request.json) else 400
+    return send_email(**(request.json))
 
-
-def send_email(**kwargs):
+def send_email(name, message, subject, email):
     try:
         cfg = current_app.config
-        msg = MIMEText(kwargs.get('message'))
-        msg['Subject'] = 'Message from {0} - {1}'.format(kwargs.get('name'),
-                                            kwargs.get('subject', 'No Subject'))
-        msg['From'] = kwargs.get('email')
+        msg = MIMEText(message)
+        msg['Subject'] = 'Message from {0} - {1}'.format(name, subject)
+        msg['From'] = email
         msg['To'] = cfg.get('SMTP_TARGET')
         with smtplib.SMTP(cfg.get('SMTP_SERVER'), cfg.get('SMTP_PORT')) as smtp:
             smtp.login(cfg.get('SMTP_LOGIN'), cfg.get('SMTP_PASSWORD'))
             smtp.sendmail(msg['From'], [msg['To']], msg.as_string())
             smtp.quit()
-        return True
+        return jsonify('Mail sent!')
     except:
-        return False
+        return abort(400)
