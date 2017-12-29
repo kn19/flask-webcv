@@ -31,8 +31,8 @@
       <% _.each(model['experience'], function(job) { %>
       <div class="row item company">
         <div class="twelve columns">
-          <h3 class="company-name"><%= job['company'] %></h3>
-          <p class="info job-title"><%= job['title'] %> <span>&bull;</span> <em
+          <h3 class="job-title"><%= job['title'] %></h3>
+          <p class="info company-name"><%= job['company'] %> <span>&bull;</span> <em
               class="date"><%= job['start_date'] %> to <%= job['end_date']
             %></em></p>
           <p class="job-summary">
